@@ -409,6 +409,7 @@ async function runQuery(
         'NotebookEdit',
         'mcp__nanoclaw__*',
         'mcp__gmail__*',
+        'mcp__gdrive__*',
       ],
       env: sdkEnv,
       permissionMode: 'bypassPermissions',
@@ -427,6 +428,14 @@ async function runQuery(
         gmail: {
           command: 'npx',
           args: ['-y', '@gongrzhe/server-gmail-autoauth-mcp'],
+        },
+        gdrive: {
+          command: 'npx',
+          args: ['-y', '@modelcontextprotocol/server-gdrive'],
+          env: {
+            GDRIVE_CREDENTIALS_PATH: '/home/node/.gdrive-mcp/gcp-oauth.keys.json',
+            GDRIVE_TOKEN_PATH: '/home/node/.gdrive-mcp/credentials.json',
+          },
         },
       },
       hooks: {
