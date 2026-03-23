@@ -433,8 +433,8 @@ async function runQuery(
           command: 'npx',
           args: ['-y', '@modelcontextprotocol/server-gdrive'],
           env: {
-            GDRIVE_CREDENTIALS_PATH: '/home/node/.gdrive-mcp/gcp-oauth.keys.json',
-            GDRIVE_TOKEN_PATH: '/home/node/.gdrive-mcp/credentials.json',
+            GDRIVE_OAUTH_PATH: '/home/node/.gdrive-mcp/gcp-oauth.keys.json',
+            GDRIVE_CREDENTIALS_PATH: '/home/node/.gdrive-mcp/credentials.json',
           },
         },
       },
